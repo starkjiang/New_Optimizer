@@ -5,7 +5,6 @@ import numpy as np
 from keras.utils import np_utils
 from keras.datasets import cifar10, cifar100, mnist
 from keras.optimizers import Adam, SGD, Adadelta, RMSprop, Adagrad, Nadam, Adamax
-from Eve import Eve
 from emvsgd import EMVSGD
 from adv_emvsgd import AEMVSGD
 from NAG_EMVSGD import EMVNAG
@@ -40,8 +39,6 @@ def train(model_name, **kwargs):
         opt = SGD(lr=1E-2, decay=1E-4, momentum=0.9, nesterov=True)
     if optimizer == "Adam":
         opt = Adam(lr=1E-4, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
-    if optimizer == "Eve":
-        opt = Eve(lr=1E-4, decay=1E-4, beta_1=0.9, beta_2=0.999, beta_3=0.999, small_k=0.1, big_K=10, epsilon=1e-08)
     if optimizer == "EMVSGD":
         opt = EMVSGD(lr=1.5E-3, decay=1E-4, beta_1=0.1, beta_2=0.999, epsilon=1e-08)
     if optimizer == "AEMVSGD":

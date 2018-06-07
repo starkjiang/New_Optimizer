@@ -37,7 +37,7 @@ if __name__ == "__main__":
 
     for experiment_name in args.list_experiments:
         optimizer = experiment_name.split("_")[0]
-        assert optimizer in ["WNAdam", "NAGAEMV", "EMVNAG", "EMVSGD", "Eve", "Adam", "SGD", "AEMVSGD", "Adadelta", "Adagrad", "RMSprop", "Nadam", "Adamax"], "Invalid optimizer"
+        assert optimizer in ["WNAdam", "NAGAEMV", "EMVNAG", "EMVSGD", "Adam", "SGD", "AEMVSGD", "Adadelta", "Adagrad", "RMSprop", "Nadam", "Adamax"], "Invalid optimizer"
         assert args.model_name in ["CNN", "Big_CNN", "FCN"], "Invalid model name"
 
         # Set default params
