@@ -92,7 +92,6 @@ generate_legacy_method_interface = functools.partial(generate_legacy_interface,
                                                      object_type='method')
 
 def get_updates_arg_preprocessing(args, kwargs):
-    # Old interface: (params, constraints, loss)
     # New interface: (loss, params)
     if len(args) > 4:
         raise TypeError('`get_update` call received more arguments '
